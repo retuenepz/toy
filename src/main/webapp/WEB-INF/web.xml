@@ -4,4 +4,17 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <filter>
+    <filter-name>MVC</filter-name>
+    <filter-class>com.toy.mvc.MVCFilter</filter-class>
+    <init-param>
+      <param-name>bootstrap</param-name>
+      <param-value>com.toy.mvc.App</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>MVC</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>
