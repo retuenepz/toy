@@ -15,7 +15,7 @@ import java.util.List;
  * Created by    on 2017/9/23.
  */
 public class RouteMatcher {
-    private List<Route> routes ;
+    private List<Route> routes = new ArrayList<Route>();
 
     public List<Route> getRoutes() {
         return routes;

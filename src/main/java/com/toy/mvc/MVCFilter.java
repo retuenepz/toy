@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class MVCFilter implements Filter {
     private ServletContext servletContext = null ;
-    private RouteMatcher routeMatcher = null ;
+    private RouteMatcher routeMatcher = new RouteMatcher() ;
     public void init(FilterConfig filterConfig) throws ServletException {
         MVC mvc = MVC.start();
         // 初始化：加载路由
@@ -59,6 +59,8 @@ public class MVCFilter implements Filter {
     }
 
     private void handle(HttpServletRequest request, HttpServletResponse response, Route route) {
+        // 保存上下文
+        MyContext.initContext(servletContext,request,response);
         // 封装请求
         Request request1 = new Request(request);
         Response response1 = new Response(response);
