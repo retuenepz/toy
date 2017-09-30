@@ -9,5 +9,7 @@ import com.toy.mvc.wrapper.Response;
 public class IndexController {
     // action 1
     public void index(Request request, Response response){
+        request.setAttr("name","崩啥卡拉卡");
+        response.render("index");
     }
 }

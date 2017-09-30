@@ -12,4 +12,13 @@ public class Request {
     public Request(HttpServletRequest request) {
         this.request = request;
     }
+    public void setAttr(String name , Object val){
+        this.request.setAttribute(name,val);
+    }
+    public Object getAttr(String name){
+        return this.request.getAttribute(name);
+    }
+    public String getParam(String name){
+        return this.request.getParameter(name);
+    }
 }

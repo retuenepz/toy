@@ -1,5 +1,8 @@
 package com.toy.mvc;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 /**
  * Created by Administrator on 2017/9/23.
  */
@@ -17,5 +20,16 @@ public class Reflect {
             e.printStackTrace();
         }
         return obj ;
+    }
+
+    public static Object invoke(Object controller, Method action,Object... args) {
+        try {
+            return action.invoke(controller,args);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return null ;
     }
 }

@@ -68,4 +68,7 @@ public class MVC {
     public static MVC start(){
         return MVCHolder.MVC;
     }
+    public ViewResolver getViewResolver(){
+        return this.viewResolver;
+    }
 }
